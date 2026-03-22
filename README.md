@@ -11,7 +11,9 @@ It provides a clean interface for managing internship applications with status t
 Staj Tracker is designed for keeping internship applications organized in one place without relying on spreadsheets or external tools. It focuses on the parts that matter most during application season: knowing where you applied, what stage each application is in, and what requires follow-up.
 
 <p align="center">
-  <img src="assets/screenshot1.png" alt="Staj Tracker Overview" width="900" />
+  <a href="assets/screenshot1.png">
+    <img src="assets/screenshot1.png" alt="Staj Tracker Overview" width="720" />
+  </a>
 </p>
 
 ## What It Offers
@@ -25,29 +27,16 @@ Staj Tracker is designed for keeping internship applications organized in one pl
 
 ## Interface
 
-### Card View
+Click any preview to open the full-size image.
 
-A clean board layout for scanning applications quickly, filtering records, and managing updates from a single screen.
-
-<p align="center">
-  <img src="assets/card_view.png" alt="Card View" width="760" />
-</p>
-
-### Kanban View
-
-A stage-based pipeline for tracking progress from wishlist to interview and offer stages in a more visual way.
-
-<p align="center">
-  <img src="assets/kanban_view.png" alt="Kanban View" width="760" />
-</p>
-
-### Application Form
-
-A compact form for adding new applications, updating existing entries, and storing context that is easy to revisit later.
-
-<p align="center">
-  <img src="assets/application_form.png" alt="Application Form" width="340" />
-</p>
+| Preview | Description |
+| --- | --- |
+| <a href="assets/card_view.png"><img src="assets/card_view.png" alt="Card View" width="260" /></a> | **Card View**  
+Scan applications quickly, use filters and sorting controls, and manage multiple entries from a compact board layout. |
+| <a href="assets/kanban_view.png"><img src="assets/kanban_view.png" alt="Kanban View" width="260" /></a> | **Kanban View**  
+Review progress visually across stages and move between application states in a more pipeline-oriented format. |
+| <a href="assets/application_form.png"><img src="assets/application_form.png" alt="Application Form" width="220" /></a> | **Application Form**  
+Add new applications, update existing entries, and keep relevant notes and follow-up dates in one place. |
 
 ## Highlights
 
