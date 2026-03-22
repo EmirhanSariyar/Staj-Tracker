@@ -27,16 +27,35 @@ Staj Tracker is designed for keeping internship applications organized in one pl
 
 ## Interface
 
-Click any preview to open the full-size image.
+### Card View
 
-| Preview | Description |
-| --- | --- |
-| <a href="assets/card_view.png"><img src="assets/card_view.png" alt="Card View" width="260" /></a> | **Card View**  
-Scan applications quickly, use filters and sorting controls, and manage multiple entries from a compact board layout. |
-| <a href="assets/kanban_view.png"><img src="assets/kanban_view.png" alt="Kanban View" width="260" /></a> | **Kanban View**  
-Review progress visually across stages and move between application states in a more pipeline-oriented format. |
-| <a href="assets/application_form.png"><img src="assets/application_form.png" alt="Application Form" width="220" /></a> | **Application Form**  
-Add new applications, update existing entries, and keep relevant notes and follow-up dates in one place. |
+The default board layout is built for fast scanning. It keeps search, filters, sorting, and application cards in a single workspace so the most important information stays visible without feeling crowded.
+
+<p align="center">
+  <a href="assets/card_view.png">
+    <img src="assets/card_view.png" alt="Card View" width="760" />
+  </a>
+</p>
+
+### Kanban View
+
+The Kanban layout makes the pipeline easier to read at a glance. It is useful for tracking movement between stages such as wishlist, applied, interview, and offer in a more visual format.
+
+<p align="center">
+  <a href="assets/kanban_view.png">
+    <img src="assets/kanban_view.png" alt="Kanban View" width="760" />
+  </a>
+</p>
+
+### Application Form
+
+The form is designed to stay compact while still capturing the details that matter during an application process, including notes, portal links, dates, and follow-up reminders.
+
+<p align="center">
+  <a href="assets/application_form.png">
+    <img src="assets/application_form.png" alt="Application Form" width="360" />
+  </a>
+</p>
 
 ## Highlights
 
