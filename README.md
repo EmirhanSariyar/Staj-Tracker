@@ -6,22 +6,44 @@ It provides a clean interface for managing internship applications with status t
 
 [Live Demo](https://emirhansariyar.github.io/Staj-Tracker/)
 
-## Preview
+## Overview
+
+Staj Tracker is designed for keeping internship applications organized in one place without relying on spreadsheets or external tools. It focuses on the parts that matter most during application season: knowing where you applied, what stage each application is in, and what requires follow-up.
 
 <p align="center">
   <img src="assets/screenshot1.png" alt="Staj Tracker Overview" width="900" />
 </p>
 
-## Screenshots
+## What It Offers
 
-### Views
+| Area | Description |
+| --- | --- |
+| Application Tracking | Store company, role, application date, portal link, notes, and follow-up date in one place. |
+| Visual Workflow | Switch between card view and Kanban view to review applications in the format that fits best. |
+| Status Management | Update application stages directly from cards and keep the pipeline current. |
+| Data Portability | Import and export data with CSV or JSON for backups and flexibility. |
+
+## Interface
+
+### Card View
+
+A clean board layout for scanning applications quickly, filtering records, and managing updates from a single screen.
 
 <p align="center">
-  <img src="assets/card_view.png" alt="Card View" width="48%" />
-  <img src="assets/kanban_view.png" alt="Kanban View" width="48%" />
+  <img src="assets/card_view.png" alt="Card View" width="760" />
+</p>
+
+### Kanban View
+
+A stage-based pipeline for tracking progress from wishlist to interview and offer stages in a more visual way.
+
+<p align="center">
+  <img src="assets/kanban_view.png" alt="Kanban View" width="760" />
 </p>
 
 ### Application Form
+
+A compact form for adding new applications, updating existing entries, and storing context that is easy to revisit later.
 
 <p align="center">
   <img src="assets/application_form.png" alt="Application Form" width="340" />
@@ -35,16 +57,6 @@ It provides a clean interface for managing internship applications with status t
 - CSV and JSON import-export
 - Local persistence with `localStorage`
 - Static deployment with GitHub Pages
-
-## Features
-
-- Track company name, role, application date, follow-up date, status, details, and applicant portal link
-- Switch between card view and Kanban view
-- Update application status directly from each card
-- Search, filter, and sort applications
-- Export and import data as `JSON`
-- Export and import data as `CSV`
-- Persist data locally with `localStorage`
 
 ## Tech Stack
 
