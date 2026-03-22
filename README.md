@@ -14,10 +14,17 @@ It provides a clean interface for managing internship applications with status t
 
 ## Screenshots
 
+### Views
+
 <p align="center">
-  <img src="assets/card_view.png" alt="Card View" width="31%" />
-  <img src="assets/kanban_view.png" alt="Kanban View" width="31%" />
-  <img src="assets/application_form.png" alt="Application Form" width="31%" />
+  <img src="assets/card_view.png" alt="Card View" width="48%" />
+  <img src="assets/kanban_view.png" alt="Kanban View" width="48%" />
+</p>
+
+### Application Form
+
+<p align="center">
+  <img src="assets/application_form.png" alt="Application Form" width="340" />
 </p>
 
 ## Highlights
