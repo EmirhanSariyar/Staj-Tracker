@@ -6,6 +6,20 @@ It provides a clean interface for managing internship applications with status t
 
 [Live Demo](https://emirhansariyar.github.io/Staj-Tracker/)
 
+## Screenshots
+
+### Card View
+
+![Card View](assets/card_view.png)
+
+### Kanban View
+
+![Kanban View](assets/kanban_view.png)
+
+### Application Form
+
+![Application Form](assets/application_form.png)
+
 ## Highlights
 
 - Card view and Kanban view
