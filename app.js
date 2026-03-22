@@ -5,12 +5,12 @@ const sampleApplications = [
   {
     id: crypto.randomUUID(),
     companyName: "Aselsan",
-    appliedPosition: "Yazilim Stajyeri",
+    appliedPosition: "Software Engineering Intern",
     dateApplied: "2026-03-12",
     applicationStatus: "Applied",
     applicantPortal: "https://kariyer.aselsan.com.tr/",
     followUpDate: "2026-03-27",
-    details: "Backend ekibi icin basvuru. Referans notu eklendi.",
+    details: "Applied for the backend team. Referral note added.",
     createdAt: new Date().toISOString(),
   },
   {
@@ -21,7 +21,7 @@ const sampleApplications = [
     applicationStatus: "Interview",
     applicantPortal: "https://career.trendyol.com/",
     followUpDate: "2026-03-24",
-    details: "IK gorusmesi olumlu gecti. Teknik case bekleniyor.",
+    details: "HR screening went well. Waiting for the technical case.",
     createdAt: new Date().toISOString(),
   },
   {
@@ -32,7 +32,7 @@ const sampleApplications = [
     applicationStatus: "Wishlist",
     applicantPortal: "https://jobs.careers.microsoft.com/",
     followUpDate: "",
-    details: "CV ve cover letter uyarlamasi yapilacak.",
+    details: "Resume and cover letter still need to be tailored.",
     createdAt: new Date().toISOString(),
   },
 ];
@@ -251,7 +251,7 @@ function buildApplicationCard(application, { compact = false, draggable = false 
   editBtn.addEventListener("click", () => populateForm(application));
   deleteBtn.addEventListener("click", () => {
     const shouldDelete = window.confirm(
-      `${application.companyName} kaydini silmek istedigine emin misin?`,
+      `Are you sure you want to delete the ${application.companyName} application?`,
     );
 
     if (!shouldDelete) {
@@ -282,7 +282,7 @@ function renderEmptyState(container) {
   const emptyState = document.createElement("div");
   emptyState.className = "empty-state";
   emptyState.textContent =
-    "Henuz goruntulenecek bir kayit yok. Yeni bir basvuru ekleyebilir veya sample data yukleyebilirsin.";
+    "No applications to display yet. Add a new entry or load the sample data to get started.";
   container.appendChild(emptyState);
 }
 
@@ -415,7 +415,7 @@ clearFormBtn.addEventListener("click", resetForm);
 
 loadSampleBtn.addEventListener("click", () => {
   const shouldLoad = window.confirm(
-    "Sample data yuklenirse mevcut kayitlarin korunacak, sadece ornek kayitlar eklenecek. Devam edilsin mi?",
+    "Sample data will be added without removing your existing entries. Do you want to continue?",
   );
 
   if (!shouldLoad) {
@@ -504,7 +504,7 @@ importFileInput.addEventListener("change", async (event) => {
     renderApplications();
     resetForm();
   } catch {
-    window.alert("JSON dosyasi okunamadi. Gecerli bir export dosyasi sec.");
+    window.alert("The JSON file could not be read. Please choose a valid export file.");
   } finally {
     importFileInput.value = "";
   }
@@ -592,7 +592,7 @@ importCsvFileInput.addEventListener("change", async (event) => {
     renderApplications();
     resetForm();
   } catch {
-    window.alert("CSV dosyasi okunamadi. Export edilen formatta bir dosya sec.");
+    window.alert("The CSV file could not be read. Please choose a valid exported file.");
   } finally {
     importCsvFileInput.value = "";
   }
