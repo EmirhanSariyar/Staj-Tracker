@@ -4,7 +4,16 @@ Staj Tracker is a lightweight internship application tracking app built with van
 
 It provides a clean interface for managing internship applications with status tracking, search and filtering, Kanban organization, and CSV/JSON import-export support. All data is stored locally in the browser using `localStorage`.
 
-Live Demo: [emirhansariyar.github.io/Staj-Tracker](https://emirhansariyar.github.io/Staj-Tracker/)
+[Live Demo](https://emirhansariyar.github.io/Staj-Tracker/)
+
+## Highlights
+
+- Card view and Kanban view
+- Application status management
+- Search, filtering, and sorting
+- CSV and JSON import-export
+- Local persistence with `localStorage`
+- Static deployment with GitHub Pages
 
 ## Features
 
