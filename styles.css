@@ -399,7 +399,7 @@ textarea {
   background: rgba(69, 123, 157, 0.14);
 }
 
-.status-pill[data-status="OA"] {
+.status-pill[data-status="Online Assessment"] {
   color: #6b2fb3;
   background: rgba(144, 103, 198, 0.16);
 }
@@ -488,7 +488,13 @@ textarea {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.kanban-column-header > div {
+  min-width: 0;
+  flex: 1 1 120px;
 }
 
 .kanban-column-header h3,
@@ -499,6 +505,12 @@ textarea {
 .kanban-column-header p {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.kanban-column-header .status-pill {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 
 .kanban-list {
@@ -611,3 +623,4 @@ textarea {
     flex: 1 1 0;
   }
 }
+

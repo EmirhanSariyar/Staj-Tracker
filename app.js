@@ -1,5 +1,12 @@
 const STORAGE_KEY = "internship-tracker-applications-v1";
-const STATUSES = ["Wishlist", "Applied", "OA", "Interview", "Offer", "Rejected"];
+const STATUSES = [
+  "Wishlist",
+  "Applied",
+  "Online Assessment",
+  "Interview",
+  "Offer",
+  "Rejected",
+];
 
 const sampleApplications = [
   {
@@ -80,7 +87,15 @@ function loadApplications() {
 
   try {
     const parsed = JSON.parse(saved);
-    return Array.isArray(parsed) ? parsed : [];
+    return Array.isArray(parsed)
+      ? parsed.map((application) => ({
+          ...application,
+          applicationStatus:
+            application.applicationStatus === "OA"
+              ? "Online Assessment"
+              : application.applicationStatus,
+        }))
+      : [];
   } catch {
     return [];
   }
@@ -109,6 +124,10 @@ function formatDate(dateString) {
 
 function getStatusOrder(status) {
   return STATUSES.indexOf(status);
+}
+
+function getStatusBadgeLabel(status) {
+  return status === 'Online Assessment' ? 'OA' : status;
 }
 
 function getFilteredApplications() {
@@ -229,7 +248,7 @@ function buildApplicationCard(application, { compact = false, draggable = false 
 
   company.textContent = application.companyName;
   position.textContent = application.appliedPosition;
-  statusPill.textContent = application.applicationStatus;
+  statusPill.textContent = getStatusBadgeLabel(application.applicationStatus);
   statusPill.dataset.status = application.applicationStatus;
   applied.textContent = formatDate(application.dateApplied);
   followUp.textContent = formatDate(application.followUpDate);
@@ -322,7 +341,7 @@ function renderKanbanView(filteredApplications) {
           <h3>${status}</h3>
           <p>${statusCount} item</p>
         </div>
-        <span class="status-pill" data-status="${status}">${status}</span>
+        <span class="status-pill" data-status="${status}">${getStatusBadgeLabel(status)}</span>
       </div>
       <div class="kanban-list"></div>
     `;
@@ -610,3 +629,5 @@ kanbanViewBtn.addEventListener("click", () => {
 
 resetForm();
 renderApplications();
+
+
