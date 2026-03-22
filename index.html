@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staj Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Internship Application Tracker</p>
+          <h1>Basvuru kaosunu duzene cevir.</h1>
+          <p class="hero-text">
+            Sirketleri, pozisyonlari, basvuru tarihlerini ve portal linklerini tek yerde tut.
+            Hangi basvuruda ne oldugunu saniyeler icinde gor.
+          </p>
+          <div class="hero-badges">
+            <span>Kanban workflow</span>
+            <span>CSV import/export</span>
+            <span>GitHub Pages ready</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="stat-card accent">
+            <span id="total-count">0</span>
+            <p>Total Applications</p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span id="interview-count">0</span>
+              <p>Interviewing</p>
+            </div>
+            <div class="stat-card">
+              <span id="offer-count">0</span>
+              <p>Offers</p>
+            </div>
+            <div class="stat-card">
+              <span id="wishlist-count">0</span>
+              <p>Wishlist</p>
+            </div>
+            <div class="stat-card">
+              <span id="rejected-count">0</span>
+              <p>Rejected</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section class="panel form-panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Application Form</p>
+              <h2>Add or update an entry</h2>
+            </div>
+            <button id="clear-form-btn" class="ghost-btn" type="button">Clear form</button>
+          </div>
+
+          <form id="application-form" class="application-form">
+            <input id="editing-id" type="hidden" />
+
+            <label>
+              Company Name
+              <input id="company-name" name="companyName" type="text" placeholder="Google" required />
+            </label>
+
+            <label>
+              Applied Position
+              <input
+                id="applied-position"
+                name="appliedPosition"
+                type="text"
+                placeholder="Software Engineer Intern"
+                required
+              />
+            </label>
+
+            <label>
+              Date Applied
+              <input id="date-applied" name="dateApplied" type="date" required />
+            </label>
+
+            <label>
+              Application Status
+              <select id="application-status" name="applicationStatus" required>
+                <option value="Wishlist">Wishlist</option>
+                <option value="Applied">Applied</option>
+                <option value="OA">OA</option>
+                <option value="Interview">Interview</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </label>
+
+            <label>
+              Applicant Portal
+              <input
+                id="applicant-portal"
+                name="applicantPortal"
+                type="url"
+                placeholder="https://careers.company.com"
+              />
+            </label>
+
+            <label>
+              Follow-up Date
+              <input id="follow-up-date" name="followUpDate" type="date" />
+            </label>
+
+            <label class="full-width">
+              Details
+              <textarea
+                id="details"
+                name="details"
+                rows="4"
+                placeholder="Recruiter note, salary info, test date, referral details..."
+              ></textarea>
+            </label>
+
+            <div class="form-actions full-width">
+              <button class="primary-btn" type="submit">Save application</button>
+              <button id="load-sample-btn" class="secondary-btn" type="button">Load sample data</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel board-panel">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Pipeline Board</p>
+              <h2>Your current applications</h2>
+            </div>
+            <div class="toolbar-actions">
+              <button id="export-btn" class="secondary-btn" type="button">Export JSON</button>
+              <button id="export-csv-btn" class="secondary-btn" type="button">Export CSV</button>
+              <label class="secondary-btn file-label" for="import-file">Import JSON</label>
+              <label class="secondary-btn file-label" for="import-csv-file">Import CSV</label>
+              <input id="import-file" type="file" accept=".json,application/json" />
+              <input id="import-csv-file" type="file" accept=".csv,text/csv" />
+            </div>
+          </div>
+
+          <div class="view-switch" role="tablist" aria-label="Board view">
+            <button id="grid-view-btn" class="switch-btn is-active" type="button">Card view</button>
+            <button id="kanban-view-btn" class="switch-btn" type="button">Kanban view</button>
+          </div>
+
+          <div class="toolbar">
+            <label class="search-wrap">
+              <span>Search</span>
+              <input id="search-input" type="search" placeholder="Company, position, details..." />
+            </label>
+
+            <label>
+              Status Filter
+              <select id="status-filter">
+                <option value="All">All</option>
+                <option value="Wishlist">Wishlist</option>
+                <option value="Applied">Applied</option>
+                <option value="OA">OA</option>
+                <option value="Interview">Interview</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </label>
+
+            <label>
+              Sort By
+              <select id="sort-by">
+                <option value="dateApplied-desc">Newest applied</option>
+                <option value="dateApplied-asc">Oldest applied</option>
+                <option value="companyName-asc">Company A-Z</option>
+                <option value="status-asc">Status</option>
+                <option value="followUpDate-asc">Next follow-up</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="results-summary" class="results-summary"></div>
+          <div id="applications-grid" class="applications-grid"></div>
+          <div id="kanban-board" class="kanban-board hidden"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="application-card-template">
+      <article class="application-card">
+        <div class="card-top">
+          <div>
+            <p class="company"></p>
+            <h3 class="position"></h3>
+          </div>
+          <span class="status-pill"></span>
+        </div>
+
+        <div class="card-meta">
+          <p><strong>Applied:</strong> <span class="date-applied"></span></p>
+          <p><strong>Follow-up:</strong> <span class="follow-up-date"></span></p>
+        </div>
+
+        <p class="details"></p>
+
+        <div class="card-links">
+          <a class="portal-link" target="_blank" rel="noreferrer">Open Portal</a>
+        </div>
+
+        <div class="card-actions">
+          <select class="status-select" aria-label="Update application status">
+            <option value="Wishlist">Wishlist</option>
+            <option value="Applied">Applied</option>
+            <option value="OA">OA</option>
+            <option value="Interview">Interview</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+          <button class="ghost-btn edit-btn" type="button">Edit</button>
+          <button class="danger-btn delete-btn" type="button">Delete</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
