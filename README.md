@@ -6,6 +6,8 @@ It provides a clean interface for managing internship applications with status t
 
 [Live Demo](https://emirhansariyar.github.io/Staj-Tracker/)
 
+Preview images below can be opened in full size directly from the README.
+
 ## Overview
 
 Staj Tracker is designed for keeping internship applications organized in one place without relying on spreadsheets or external tools. It focuses on the parts that matter most during application season: knowing where you applied, what stage each application is in, and what requires follow-up.
@@ -91,3 +93,4 @@ Application data is stored in the browser using `localStorage`.
 - Data remains available in the same browser unless storage is cleared
 - Backups can be created using the JSON or CSV export options
 - Imported files replace the current in-browser dataset
+
